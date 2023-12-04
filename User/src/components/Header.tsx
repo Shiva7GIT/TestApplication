@@ -1,4 +1,3 @@
-import React from 'react';
 import {Box,  AppBar, Toolbar, Typography, IconButton, Badge } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
@@ -7,7 +6,7 @@ interface DenseAppBarProps {
   onCartIconClick: () => void;
 }
 
-const DenseAppBar: React.FC<DenseAppBarProps> = ({ cartItemCount, onCartIconClick }) => {
+const DenseAppBar = ({ cartItemCount, onCartIconClick } : DenseAppBarProps) => {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
