@@ -1,6 +1,5 @@
-import React from 'react';
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import  Product  from './types/interface';
+import Product from './types/interface';
 
 interface UserProductFormProps {
   products: Product[];
@@ -13,20 +12,21 @@ const UserProductForm: React.FC<UserProductFormProps> = ({ products, onAddToCart
   };
 
   return (
+    <div style={{ display: 'flex', justifyContent: 'center' }}>    
     <Paper>
-      <TableContainer>
+      <TableContainer style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign : 'center' }}>
         <Table>
           <TableHead>
             <TableRow>
               <TableCell>Product ID</TableCell>
               <TableCell>Product Name</TableCell>
-              <TableCell>Quantity</TableCell>
+              <TableCell>Available Quantity</TableCell>
               <TableCell>Action</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {products.map((product) => (
-              <TableRow key={product.id}>
+              <TableRow key={product.id} >
                 <TableCell>{product.id}</TableCell>
                 <TableCell>{product.productName}</TableCell>
                 <TableCell>{product.quantity}</TableCell>
@@ -41,8 +41,10 @@ const UserProductForm: React.FC<UserProductFormProps> = ({ products, onAddToCart
         </Table>
       </TableContainer>
     </Paper>
+    </div>
   );
 };
 
 export default UserProductForm;
+
 

@@ -1,6 +1,5 @@
-import React from 'react';
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
-import Product  from './types/interface';
+import {  Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import Product from './types/interface';
 
 interface UserCartProps {
   cartItems: Product[];
@@ -8,8 +7,9 @@ interface UserCartProps {
 
 const UserCart: React.FC<UserCartProps> = ({ cartItems }) => {
   return (
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
     <Paper>
-      <TableContainer>
+      <TableContainer style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Table>
           <TableHead>
             <TableRow>
@@ -30,6 +30,7 @@ const UserCart: React.FC<UserCartProps> = ({ cartItems }) => {
         </Table>
       </TableContainer>
     </Paper>
+    </div>
   );
 };
 
